@@ -10,7 +10,7 @@
         <Style TargetType="Button">
             <Setter Property="Height" Value="25" />
             <Setter Property="Width" Value="80" />
-            <Setter Property="Margin" Value="25 5 25 5" />
+            <Setter Property="Margin" Value="5 6 5 6" />
         </Style>
     </Window.Resources>
     <Grid>
@@ -22,6 +22,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
             <Button Content="Сохранить" Click="Save_Click" />
             <Button Content="Загрузить"  Click="Load_Click" />
+            <Button Content="Редактировать"  Click="Edit_Click" Margin="5,6,5,5.8" Width="93" />
             <Button Content="Печать"  Click="Print_Click" />
         </StackPanel>
     </Grid>
