@@ -18,12 +18,13 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <RichTextBox x:Name="docBox" />
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <Button Content="Сохранить" Click="Save_Click" />
+        <RichTextBox x:Name="docBox" Margin="0,0,91.6,0" />
+        <StackPanel Margin="302,0,0,0" HorizontalAlignment="Right" >
+            <Button Content="Сохранить" Click="Save_Click"  />
             <Button Content="Загрузить"  Click="Load_Click" />
-            <Button Content="Редактировать"  Click="Edit_Click" Margin="5,6,5,5.8" Width="93" />
-            <Button Content="Печать"  Click="Print_Click" />
+            <Button Content="Редактировать"  Click="Edit_Click" />
+            <Button Content="Печать" />
+            <Button Content="Авторизация" Click="Login_Click" />
         </StackPanel>
     </Grid>
 </Window>
