@@ -1,0 +1,16 @@
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\WpfAppVedomost.exe.config
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\WpfAppVedomost.exe
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\WpfAppVedomost.pdb
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\MainWindow.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\PasswordWindow.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\App.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost_MarkupCompile.cache
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost_MarkupCompile.lref
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\MainWindow.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\PasswordWindow.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.g.resources
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.Properties.Resources.resources
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.csproj.GenerateResource.cache
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.csproj.CoreCompileInputs.cache
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.exe
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.pdb

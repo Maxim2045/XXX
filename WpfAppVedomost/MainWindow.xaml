@@ -23,8 +23,9 @@
             <Button Content="Сохранить" Click="Save_Click"  />
             <Button Content="Загрузить"  Click="Load_Click" />
             <Button Content="Редактировать"  Click="Edit_Click" />
-            <Button Content="Печать" />
+            <Button Content="Печать"  Click="Print_Click" />
             <Button Content="Авторизация" Click="Login_Click" />
+            <Button Content="SQL" Click="SQL_Click" />
         </StackPanel>
     </Grid>
 </Window>

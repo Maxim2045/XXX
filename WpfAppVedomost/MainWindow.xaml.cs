@@ -19,6 +19,11 @@ using System.Windows.Xps; //Для вывода неформатируемого
 using Microsoft.Win32;//Для RichTextBox
 using System.IO;
 using System.Diagnostics;//Для убивание процессов
+using System.Drawing.Printing;
+using System.Drawing;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace WpfAppVedomost
 {
@@ -27,6 +32,7 @@ namespace WpfAppVedomost
     /// </summary>
     public partial class MainWindow : Window
     {
+
         private Excel.Application excelapp;
         //private Excel.Window excelWindow;
 
@@ -41,7 +47,23 @@ namespace WpfAppVedomost
        
         public MainWindow()
         {
-            InitializeComponent();
+            PasswordWindow passwordWindow = new PasswordWindow();
+
+            if (passwordWindow.ShowDialog() == true)
+            {
+                if (passwordWindow.Password == "12345678")
+                {
+                    MessageBox.Show("Авторизация пройдена");
+                    InitializeComponent();
+                }
+                else
+                    MessageBox.Show("Неверный пароль");
+            }
+            else
+            {
+                MessageBox.Show("Авторизация не пройдена");
+            }
+            
         }
         public void CloseProcess(string Process_Name)
         {
@@ -54,7 +76,7 @@ namespace WpfAppVedomost
         }
         private void Save_Click(object sender, RoutedEventArgs e) //сохранение
         {
-            SaveFileDialog sfd = new SaveFileDialog
+            SaveFileDialog sfd = new SaveFileDialog()
             {
                 Filter = "Text Files (*.txt)|*.txt|RichText Files (*.rtf)|*.rtf|XAML Files (*.xaml)|*.xaml|All files (*.*)|*.*"
             };
@@ -68,13 +90,14 @@ namespace WpfAppVedomost
                     else if (Path.GetExtension(sfd.FileName).ToLower() == ".txt")
                         doc.Save(fs, DataFormats.Text);
                     else
-                        doc.Save(fs, DataFormats.Xaml);
+                       doc.Save(fs, DataFormats.Xaml);
                 }
             }
             CloseProcess("WINWORD");
         }
         private void Load_Click(object sender, RoutedEventArgs e) //Загрузка документа(шаблона)
         {
+            
             string StudentName;
             int StudentNumber;
             excelapp = new Excel.Application();
@@ -125,12 +148,15 @@ namespace WpfAppVedomost
                 StudentNames[k] = StudentName;
                 StudentNumbers[k] = StudentNumber;
                 BeginList++;
-            }          
+            }
+            
             CloseProcess("Excel");
             Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
             //Загружаем документ
             Microsoft.Office.Interop.Word.Document doc = null;
-            object fileName = "D:\\Загрузки\\MyApps\\Диплом2019-2020\\XXX\\WpfAppVedomost\\bin\\Debug\\Vedomost.rtf";
+            object fileName = Path.Combine(
+    Path.GetDirectoryName(Environment.GetCommandLineArgs()[0])+"\\Vedomost.rtf" //то woo будет содержать строку "d:\folder\keys"
+    );
             object falseValue = false;
             object trueValue = true;
             object missing = Type.Missing;
@@ -149,54 +175,22 @@ namespace WpfAppVedomost
                                                    
             }
             // app.Visible = true;
-            doc.SaveAs("D:\\Загрузки\\MyApps\\Диплом2019-2020\\XXX\\WpfAppVedomost\\bin\\Debug\\Vedomost2.rtf");
-            CloseProcess("WINWORD");
+            doc.SaveAs(Path.Combine(
+    Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.rtf"));
+            
+           
+           CloseProcess("WINWORD");
         }
-       /* private void Print_Click(object sender, EventArgs e)
+        private void Print_Click(object sender, EventArgs e)
         {
-            PrintDialog printDialog = new PrintDialog();
-            PrintDocument documentToPrint = new PrintDocument();
-            printDialog.Document = documentToPrint;
-
-            if (printDialog.ShowDialog() == DialogResult.OK)
+            PrintDialog pd = new PrintDialog();
+            if ((pd.ShowDialog() == true))
             {
-                StringReader reader = new StringReader(docBox.Text);
-                documentToPrint.PrintPage += new PrintPageEventHandler(DocumentToPrint_PrintPage);
-                documentToPrint.Print();
+                //use either one of the below      
+                pd.PrintVisual(docBox as Visual, "printing as visual");
+                pd.PrintDocument((((IDocumentPaginatorSource)docBox.Document).DocumentPaginator), "Печать документа");
             }
         }
-
-        private void DocumentToPrint_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            StringReader reader = new StringReader(eintragRichTextBox.Text);
-            float LinesPerPage = 0;
-            float YPosition = 0;
-            int Count = 0;
-            float LeftMargin = e.MarginBounds.Left;
-            float TopMargin = e.MarginBounds.Top;
-            string Line = null;
-            Font PrintFont = this.eintragRichTextBox.Font;
-            SolidBrush PrintBrush = new SolidBrush(Color.Black);
-
-            LinesPerPage = e.MarginBounds.Height / PrintFont.GetHeight(e.Graphics);
-
-            while (Count < LinesPerPage && ((Line = reader.ReadLine()) != null))
-            {
-                YPosition = TopMargin + (Count * PrintFont.GetHeight(e.Graphics));
-                e.Graphics.DrawString(Line, PrintFont, PrintBrush, LeftMargin, YPosition, new StringFormat());
-                Count++;
-            }
-
-            if (Line != null)
-            {
-                e.HasMorePages = true;
-            }
-            else
-            {
-                e.HasMorePages = false;
-            }
-            PrintBrush.Dispose();
-        }*/ //Нашел инфу, что надо самому RichTextBox переписать, так будет быстрее работать. Пока не разобрался, как это делать
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             
@@ -216,8 +210,11 @@ namespace WpfAppVedomost
                         doc.Load(fs, DataFormats.Text);
                     else
                         doc.Load(fs, DataFormats.Xaml);
-                }
+                    fs.Close();
+                }              
             }
+            File.Delete(Path.Combine(
+    Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.rtf"));
             CloseProcess("WINWORD");
         }
         private void Login_Click(object sender, RoutedEventArgs e)
@@ -235,6 +232,22 @@ namespace WpfAppVedomost
             {
                 MessageBox.Show("Авторизация не пройдена");
             }
+        }
+
+        private void SQL_Click(object sender, RoutedEventArgs e)
+        {
+
+            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Dekanat;Integrated Security=True";
+            string sqlExpression = "INSERT INTO Semester (NumberSemester) VALUES (18)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                int number = command.ExecuteNonQuery();
+                connection.Close();
+            }
+            
         }
     }
 }
