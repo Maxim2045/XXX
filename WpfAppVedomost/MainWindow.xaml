@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppVedomost"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="400">
+        Title="Ведомайзер" Height="800" Width="900" Top="0" Left="0" WindowStartupLocation="CenterScreen" VerticalAlignment="Top" Margin="0,0,50,0">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="25" />
@@ -14,17 +14,21 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="356*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <RichTextBox x:Name="docBox" Margin="0,0,91.6,0" />
-        <StackPanel Margin="302,0,0,0" HorizontalAlignment="Right" >
+        <RichTextBox x:Name="docBox" Margin="0,0,54.4,0" />
+        <StackPanel Margin="0,0,-0.4,0" HorizontalAlignment="Right" Grid.ColumnSpan="2" >
             <Button Content="Сохранить" Click="Save_Click"  />
             <Button Content="Загрузить"  Click="Load_Click" />
             <Button Content="Редактировать"  Click="Edit_Click" />
             <Button Content="Печать"  Click="Print_Click" />
-            <Button Content="Авторизация" Click="Login_Click" />
+            
             <Button Content="SQL" Click="SQL_Click" />
         </StackPanel>
     </Grid>

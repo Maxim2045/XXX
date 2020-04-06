@@ -14,3 +14,4 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.csproj.CoreCompileInputs.cache
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.exe
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.pdb
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.csprojAssemblyReference.cache
