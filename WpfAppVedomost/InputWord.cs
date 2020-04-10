@@ -29,9 +29,11 @@ namespace WpfAppVedomost
                 tableVedomost.Cell(k + 4, 1).Range.Text = (k + 1).ToString();
                 tableVedomost.Cell(k + 4, 2).Range.Text = StudentNames[k].ToString();
                 tableVedomost.Cell(k + 4, 3).Range.Text = StudentNumbers[k].ToString();
-            }          
+            }
             doc.SaveAs(Path.Combine(
             Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.rtf"));
+            doc.SaveAs(Path.Combine(
+            Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.doc"));
         }
     }
 }

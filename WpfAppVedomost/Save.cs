@@ -30,7 +30,10 @@ namespace WpfAppVedomost
                         doc.Save(fs, DataFormats.Xaml);
                 }
             }
-            else MessageBox.Show("Файл не сохранен");
+            else
+            {
+                MessageBox.Show("Файл не сохранен"); 
+            }
             File.Delete(Path.Combine(
            Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.rtf"));
         }

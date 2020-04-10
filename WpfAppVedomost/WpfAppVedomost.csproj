@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>shithot_119538.ico</ApplicationIcon>
+    <ApplicationIcon>Limewire-destroy.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -168,6 +168,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="shithot_119538.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="medical_mask_mask_pollution_security_medical_icon_140401.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gas_mask_protect_virus_bacteria_scientist_icon_140377.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="flashMX-destroy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Limewire-destroy.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
