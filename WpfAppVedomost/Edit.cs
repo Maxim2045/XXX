@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Documents;
 using System.IO;
 using System.Windows.Controls;
+using Microsoft.Office.Interop.Word;
 
 namespace WpfAppVedomost
 {
@@ -11,28 +12,28 @@ namespace WpfAppVedomost
     {
         public void EditClick(RichTextBox docBox)
         {
+            docBox.Document.Blocks.Clear();
             OpenFileDialog ofd = new OpenFileDialog
             {
-                Filter = "RichText Files (*.rtf)|*.rtf|All files (*.*)|*.*",
+                Filter = "Word files (*.docx)|*.docx|All files (*.*)|*.*",
                 InitialDirectory = Path.Combine(
-               Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]))
+              Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]))
             };
-
             if (ofd.ShowDialog() == true)
             {
-                TextRange doc = new TextRange(docBox.Document.ContentStart, docBox.Document.ContentEnd);
-                using (FileStream fs = new FileStream(ofd.FileName, FileMode.Open))
-                {
-                    if (Path.GetExtension(ofd.FileName).ToLower() == ".rtf")
-                        doc.Load(fs, DataFormats.Rtf);
-                    else if (Path.GetExtension(ofd.FileName).ToLower() == ".txt")
-                        doc.Load(fs, DataFormats.Text);
-                    else
-                        doc.Load(fs, DataFormats.Xaml);
-                    fs.Close();
-                }
+                Microsoft.Office.Interop.Word.Application wordObject = new Microsoft.Office.Interop.Word.Application();
+            object File = ofd.FileName;
+            object nullobject = System.Reflection.Missing.Value;
+            wordObject.DisplayAlerts = Microsoft.Office.Interop.Word.WdAlertLevel.wdAlertsNone;
+            Microsoft.Office.Interop.Word._Document docs = wordObject.Documents.Open(ref File, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject);
+            docs.ActiveWindow.Selection.WholeStory();
+            docs.ActiveWindow.Selection.Copy();
+            docBox.Paste();
+            docs.Close(ref nullobject, ref nullobject, ref nullobject);
+            wordObject.Quit();
             }
             else MessageBox.Show("Отмена редактирования");
+           
         }
     }
 }

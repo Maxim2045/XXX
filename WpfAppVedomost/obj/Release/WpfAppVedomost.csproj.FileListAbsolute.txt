@@ -15,3 +15,6 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.exe
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.pdb
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.csprojAssemblyReference.cache
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\DocumentFormat.OpenXml.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\DocumentFormat.OpenXml.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.csproj.CopyComplete

@@ -15,20 +15,22 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="356*"/>
-            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="810*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="15*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <RichTextBox x:Name="docBox" Margin="0,0,54.4,0" />
-        <StackPanel Margin="0,0,-0.4,0" HorizontalAlignment="Right" Grid.ColumnSpan="2" >
-            <Button Content="Сохранить" Click="Save_Click"  />
-            <Button Content="Загрузить"  Click="Load_Click" />
-            <Button Content="Редактировать"  Click="Edit_Click" />
-            <Button Content="Печать"  Click="Print_Click" />
-            
+        <RichTextBox x:Name="docBox" Margin="10,5,12,4.4" />
+        <StackPanel Margin="0,0,-0.4,0.4" HorizontalAlignment="Right" Grid.ColumnSpan="4" >
+            <Button Content="Сохранить" Click="Save_Click" Width="88" />
+            <Button Content="Загрузить"  Click="Load_Click" Width="88" />
+            <Button Content="Редактировать"  Click="Edit_Click" Width="88" />
+            <Button Content="Печать"  Click="Print_Click" Width="88" />
+
             <Button Content="SQL" Click="SQL_Click" />
         </StackPanel>
     </Grid>

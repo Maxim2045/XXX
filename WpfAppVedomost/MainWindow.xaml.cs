@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Media;
 using System.Diagnostics;//Для убивание процессов
 using System.Data.SqlClient;
 
@@ -33,28 +30,25 @@ namespace WpfAppVedomost
             save.SaveClick(docBox);
             CloseProcess("WINWORD");
         }
+       
         private void Load_Click(object sender, RoutedEventArgs e) //Загрузка документа(шаблона)
         {
 
             InputExcel Students = new InputExcel();
             int LastRow=Students.Initialization();
             string [] StudentNames = Students.FullNameDataExcel(LastRow);
-            int[] StudentNumber = Students.StudentNumberDataExcel(LastRow);
+            int[] StudentNumbers = Students.StudentNumberDataExcel(LastRow);
             CloseProcess("Excel");
+        
             InputWord doc = new InputWord();
-            doc.DataWord(LastRow, StudentNames, StudentNumber);
-            CloseProcess("WINWORD");
+            
+            doc.InsertTableInDoc(LastRow, StudentNames, StudentNumbers);                                        
+           // CloseProcess("WINWORD");
         }
-        private void Print_Click(object sender, EventArgs e)
+       private void Print_Click(object sender, EventArgs e)
         {
-            PrintDialog pd = new PrintDialog();
-            if ((pd.ShowDialog() == true))
-            {
-                   
-                pd.PrintVisual(docBox as Visual, "printing as visual");
-                pd.PrintDocument((((IDocumentPaginatorSource)docBox.Document).DocumentPaginator), "Печать документа");
-            }
-            else MessageBox.Show("Печать отменена");
+            Print print = new Print();
+            print.PrintClick(docBox);
         }
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
