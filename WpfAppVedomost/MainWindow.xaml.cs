@@ -2,7 +2,8 @@
 using System.Windows;
 using System.Diagnostics;//Для убивание процессов
 using System.Data.SqlClient;
-
+using DocumentFormat.OpenXml.Office2010.ExcelAc;
+using System.Collections.Generic;
 
 namespace WpfAppVedomost
 {
@@ -13,7 +14,8 @@ namespace WpfAppVedomost
     {     
         public MainWindow()
         {                  
-           InitializeComponent();                               
+           InitializeComponent();
+           
         }
         public void CloseProcess(string Process_Name)
         {
@@ -35,15 +37,15 @@ namespace WpfAppVedomost
         {
 
             InputExcel Students = new InputExcel();
-            int LastRow=Students.Initialization();
-            string [] StudentNames = Students.FullNameDataExcel(LastRow);
-            int[] StudentNumbers = Students.StudentNumberDataExcel(LastRow);
+            _ = new List<string>();
+            List<string> Info = Students.Initialization();
+
             CloseProcess("Excel");
         
             InputWord doc = new InputWord();
             
-            doc.InsertTableInDoc(LastRow, StudentNames, StudentNumbers);                                        
-           // CloseProcess("WINWORD");
+            doc.InsertTableInDoc(Info);                                        
+          
         }
        private void Print_Click(object sender, EventArgs e)
         {

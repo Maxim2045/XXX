@@ -24,8 +24,8 @@ namespace WpfAppVedomost
                 Microsoft.Office.Interop.Word.Application wordObject = new Microsoft.Office.Interop.Word.Application();
             object File = ofd.FileName;
             object nullobject = System.Reflection.Missing.Value;
-            wordObject.DisplayAlerts = Microsoft.Office.Interop.Word.WdAlertLevel.wdAlertsNone;
-            Microsoft.Office.Interop.Word._Document docs = wordObject.Documents.Open(ref File, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject);
+            wordObject.DisplayAlerts = WdAlertLevel.wdAlertsNone;
+            _Document docs = wordObject.Documents.Open(ref File, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject);
             docs.ActiveWindow.Selection.WholeStory();
             docs.ActiveWindow.Selection.Copy();
             docBox.Paste();

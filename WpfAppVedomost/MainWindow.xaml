@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppVedomost"
         mc:Ignorable="d"
-        Title="Ведомайзер" Height="800" Width="900" Top="0" Left="0" WindowStartupLocation="CenterScreen" VerticalAlignment="Top" Margin="0,0,50,0">
+        Title="Ведомайзер" Height="1200" Width="1100"   Margin="0,0,50,0">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="25" />
@@ -15,17 +15,18 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="810*"/>
-            <ColumnDefinition Width="13*"/>
-            <ColumnDefinition Width="56*"/>
-            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="734.4"/>
+            <ColumnDefinition Width="256.8"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="1170.4" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <RichTextBox x:Name="docBox" Margin="10,5,12,4.4" />
-        <StackPanel Margin="0,0,-0.4,0.4" HorizontalAlignment="Right" Grid.ColumnSpan="4" >
+        <RichTextBox x:Name="docBox" Width="793" Height="1123" Margin="98,24,100.2,23.4" Grid.ColumnSpan="2" />
+        <StackPanel Margin="0,0,-0.4,0.4" HorizontalAlignment="Right" Grid.ColumnSpan="3" Grid.Column="2" >
             <Button Content="Сохранить" Click="Save_Click" Width="88" />
             <Button Content="Загрузить"  Click="Load_Click" Width="88" />
             <Button Content="Редактировать"  Click="Edit_Click" Width="88" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-
+using System.Windows;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
@@ -11,61 +11,79 @@ namespace WpfAppVedomost
 {
     class InputWord
     {
-        public  void InsertTableInDoc(int LastRow, string[] StudentNames, int[] StudentNumbers)
+        public TableCell Celled(string InputText)
         {
-            // Open a WordprocessingDocument for editing using the filepath.
+           
+            var tc = new TableCell();
+            var paragraph = new Paragraph();
+            var run = new Run();
+            var text = new Text(InputText);
 
-            // Assign a reference to the existing document body.
+            
+            RunProperties runProperties1 = new RunProperties();
+            FontSize fontSize1 = new FontSize() { Val = "20" };
+            runProperties1.Append(fontSize1);
+
+            run.Append(runProperties1);
+            run.Append(text);
+
+            paragraph.Append(run);
+            tc.Append(paragraph);
+           
+            return tc;
+        }
+        public  void InsertTableInDoc(List<string> Info)
+        {
             string filepath = Path.Combine(
                             Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost.docx"
                                          );
-            using (WordprocessingDocument wordDoc2 = WordprocessingDocument.Open(filepath, true))
+            string filepath2 = Path.Combine(
+                            Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\NewVedomost.docx"
+                                         );
+            try
+            {
+                File.Copy(filepath, filepath2);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Удалите или перемеименуйте ранее созданную ведомость");
+            }
+            using (WordprocessingDocument wordDoc2 = WordprocessingDocument.Open(filepath2, true))
             {
                 var doc = wordDoc2.MainDocumentPart.Document;
                 Table table = doc.MainDocumentPart.Document.Body.Elements<Table>().FirstOrDefault();
-         
-                for (int i = 0; i < LastRow; i++)
-                {
+                
+                int k = 1;
+                for (int i = 0; i < Info.Count; i++)
+                   {
                     TableRow tr = new TableRow();
-                    TableCell tablecell1 = new TableCell(new Paragraph(new Run(new Text((i+1).ToString()))));
-                    TableCell tablecell2 = new TableCell(new Paragraph(new Run(new Text(StudentNames[i]))));
-                    TableCell tablecell3 = new TableCell(new Paragraph(new Run(new Text(StudentNumbers[i].ToString()))));
-                    TableCell tablecell4 = new TableCell(new Paragraph(new Run(new Text())));
-                    TableCell tablecell5 = new TableCell(new Paragraph(new Run(new Text())));
-                    TableCell tablecell6 = new TableCell(new Paragraph(new Run(new Text())));
-                    TableCell tablecell7 = new TableCell(new Paragraph(new Run(new Text())));
-                    TableCell tablecell8 = new TableCell(new Paragraph(new Run(new Text())));
-                    TableCell tablecell9 = new TableCell(new Paragraph(new Run(new Text())));
-                    TableCell tablecell10 = new TableCell(new Paragraph(new Run(new Text())));
+                    for (int j=0;j<10;j++)
+                    {
+                        
+                        switch (j)
+                        {
+                            case 0:
 
-                    tr.Append(tablecell1, tablecell2, tablecell3, tablecell4, tablecell5, tablecell6, tablecell7, tablecell8, tablecell9, tablecell10);
-                    table.AppendChild(tr);
-                }
-
+                                tr.Append(Celled(k.ToString()));
+                                k++;
+                                break;
+                            case 1:
+                                tr.Append(Celled(Info[i].ToString()));
+                                
+                                break;
+                            case 2:
+                                tr.Append(Celled(Info[i+1].ToString()));
+                                break;
+                            default:
+                                tr.Append(Celled(""));                              
+                                break;
+                        }                                               
+                    }                   
+                    table.Append(tr);                  
+                    i++;
+                   }    
             }
-
-
         }
-      /*  public void DataWord(int LastRow, string[] StudentNames, int [] StudentNumbers)
-        {
-           
-            object fileName = Path.Combine(
-                              Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost.rtf"
-                                           );
-            
-            for (int k = 0; k < LastRow; k++)
-            {
-                tableVedomost.Rows.Add();/*
-                tableVedomost.Cell(k + 4, 1).Range.Text = (k + 1).ToString();
-                tableVedomost.Cell(k + 4, 2).Range.Text = StudentNames[k].ToString();
-                tableVedomost.Cell(k + 4, 3).Range.Text = StudentNumbers[k].ToString();
-                doc.Content.Text = "ADadsefsf";
-
-            }
-            doc.SaveAs(Path.Combine(
-            Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.rtf"));
-            doc.SaveAs(Path.Combine(
-            Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.doc"));
-        }*/
+    
     }
 }

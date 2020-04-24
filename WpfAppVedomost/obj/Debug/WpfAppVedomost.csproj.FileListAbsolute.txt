@@ -30,3 +30,6 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Wp
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\WpfAppVedomost.csprojAssemblyReference.cache
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\PasswordWindow.g.cs
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\PasswordWindow.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\WpfAppVedomost.csproj.CopyComplete
