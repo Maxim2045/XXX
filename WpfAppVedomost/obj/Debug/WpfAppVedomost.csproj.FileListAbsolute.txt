@@ -33,3 +33,14 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Pa
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\DocumentFormat.OpenXml.dll
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\DocumentFormat.OpenXml.xml
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\WpfAppVedomost.csproj.CopyComplete
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\FluentWPF.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\MaterialDesignColors.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\MaterialDesignColors.pdb
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\App.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\EntityFramework.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\EntityFramework.SqlServer.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\EntityFramework.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\EntityFramework.SqlServer.xml

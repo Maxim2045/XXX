@@ -18,3 +18,14 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\DocumentFormat.OpenXml.dll
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\DocumentFormat.OpenXml.xml
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\WpfAppVedomost.csproj.CopyComplete
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\EntityFramework.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\EntityFramework.SqlServer.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\FluentWPF.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\MaterialDesignColors.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\MaterialDesignThemes.Wpf.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\EntityFramework.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\EntityFramework.SqlServer.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\MaterialDesignColors.pdb
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\MaterialDesignThemes.Wpf.pdb
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\MaterialDesignThemes.Wpf.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\App.baml

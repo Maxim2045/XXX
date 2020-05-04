@@ -1,5 +1,5 @@
 ﻿using System;
-using Excel = Microsoft.Office.Interop.Excel;
+
 using System.IO;
 using Microsoft.Win32;
 using System.Windows;
@@ -67,21 +67,25 @@ namespace WpfAppVedomost
             }
             else
             {
-                MessageBox.Show("Отмена редактирования");
+                MessageBox.Show("Отмена редактирования");               
             }
             return Info;
         } 
      
         private string GetCellValue(SpreadsheetDocument doc, Cell cell)
-        {
-            string value = cell.CellValue.InnerText;
-            if (cell.DataType != null && cell.DataType.Value == CellValues.SharedString)
+        {   if (cell.CellValue == null)
             {
-                return doc.WorkbookPart.SharedStringTablePart.SharedStringTable.ChildElements.GetItem(int.Parse(value)).InnerText;
+                return  " ";
             }
-            return value;
-        }
-    
-
+            else
+            {
+                string value = cell.CellValue.InnerText;
+                if (cell.DataType != null && cell.DataType.Value == CellValues.SharedString)
+                {
+                    return doc.WorkbookPart.SharedStringTablePart.SharedStringTable.ChildElements.GetItem(int.Parse(value)).InnerText;
+                }
+                return value;
+            }            
+        }   
     }
 }

@@ -5,34 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppVedomost"
         mc:Ignorable="d"
-        Title="Ведомайзер" Height="1200" Width="1100"   Margin="0,0,50,0">
-    <Window.Resources>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF" 
+        fw:AcrylicWindow.Enabled="True"
+        Title="Ведомайзер" Height="1250" Width="1200"   Margin="0,0,50,0" FontSize="14">
+    <!--<Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="25" />
             <Setter Property="Width" Value="80" />
             <Setter Property="Margin" Value="5 6 5 6" />
         </Style>
-    </Window.Resources>
+    </Window.Resources>-->
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="734.4"/>
-            <ColumnDefinition Width="256.8"/>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="34*"/>
-            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="56.8"/>
+            <ColumnDefinition Width="1094.4"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1170.4" />
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="900" />
             <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <RichTextBox x:Name="docBox" Width="793" Height="1123" Margin="98,24,100.2,23.4" Grid.ColumnSpan="2" />
-        <StackPanel Margin="0,0,-0.4,0.4" HorizontalAlignment="Right" Grid.ColumnSpan="3" Grid.Column="2" >
+        </Grid.RowDefinitions>-->
+        <DockPanel Margin="0,0,26.2,0" Grid.ColumnSpan="2">
+            <ToolBar DockPanel.Dock="Top" Margin="0,0,174.2,0" HorizontalAlignment="Right" Width="850" Background="White">
+                <Separator />
+                <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                    <materialDesign:PackIcon Kind="FormatBold" Margin="10" Width="25" Height="25"/>
+                </ToggleButton>
+                <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                    <materialDesign:PackIcon Kind="FormatItalic" Margin="10" Width="25" Height="25"/>
+                </ToggleButton>
+                <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
+                    <materialDesign:PackIcon Kind="FormatUnderline" Margin="10" Width="25" Height="25"/>
+                </ToggleButton>
+                <Separator />
+                <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="CmbFontFamily_SelectionChanged" />
+                <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="CmbFontSize_TextChanged" />
+            </ToolBar>
+            <RichTextBox x:Name="docBox" Margin="20,5.2,94.4,41"  SelectionChanged="DocBox_SelectionChanged" Width="850" Background="White" CaretBrush="#FF251313" BorderBrush="#892214F0" BorderThickness="1" FontFamily="Times New Roman" FontSize="12"/>
+        </DockPanel>
+        
+
+        <!--<StackPanel Margin="0,0,-0.4,0.4" HorizontalAlignment="Right" Grid.ColumnSpan="3" Grid.Column="2" >
             <Button Content="Сохранить" Click="Save_Click" Width="88" />
-            <Button Content="Загрузить"  Click="Load_Click" Width="88" />
-            <Button Content="Редактировать"  Click="Edit_Click" Width="88" />
-            <Button Content="Печать"  Click="Print_Click" Width="88" />
+            <Button Content="Загрузить"  Click="Load_Click"  Width="88" />
+            <Button Content="Редактировать"  Click="Edit_Click" Width="88"/>
+            <Button Content="Печать"   Width="88" />
 
             <Button Content="SQL" Click="SQL_Click" />
+        </StackPanel>-->
+
+        <StackPanel Margin="904.4,10,21.8,0" Grid.Column="1">
+            <TextBlock Text="Действия" Margin="15" FontWeight="DemiBold"/>
+            <ListView FontSize="15"  >
+                <ListViewItem Padding="1">
+                    <StackPanel Orientation="Horizontal"  MouseDown="Load_Click"  >
+                        <materialDesign:PackIcon Kind="FileUpload" Margin="15"/>
+                        <TextBlock Text="Загрузить" VerticalAlignment="Center"  />
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Padding="1" >
+                    <StackPanel Orientation="Horizontal" MouseDown="Edit_Click" >
+                        <materialDesign:PackIcon Kind="Edit" Margin="15"/>
+                        <TextBlock Text="Редактировать" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Padding="1">
+                    <StackPanel Orientation="Horizontal" MouseDown="Save_Click">
+                        <materialDesign:PackIcon Kind="ContentSave" Margin="15"/>
+                        <TextBlock Text="Сохранить" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Padding="1">
+                    <StackPanel Orientation="Horizontal" MouseDown="Print_Click" >
+                        <materialDesign:PackIcon Kind="Printer" Margin="15"/>
+                        <TextBlock Text="Печать" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
         </StackPanel>
+
     </Grid>
 </Window>

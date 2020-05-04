@@ -1,7 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Windows;
-using System.Windows.Documents;
 using System.IO;
 using System.Windows.Controls;
 using Microsoft.Office.Interop.Word;
