@@ -44,3 +44,12 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\En
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\EntityFramework.SqlServer.dll
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\EntityFramework.xml
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\EntityFramework.SqlServer.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\System.Data.SQLite.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\System.Data.SQLite.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\System.Data.SQLite.dll.config
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Models\StudentWindow.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Models\WindowDB.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Models\StudentWindow.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Models\WindowDB.g.cs

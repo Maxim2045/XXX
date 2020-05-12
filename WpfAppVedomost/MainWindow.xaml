@@ -82,6 +82,12 @@
                         <TextBlock Text="Печать" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
+                <ListViewItem Padding="1">
+                    <StackPanel Orientation="Horizontal" MouseDown="SQL_Click" >
+                        <materialDesign:PackIcon Kind="Database" Margin="15"/>
+                        <TextBlock Text="SQL" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
             </ListView>
         </StackPanel>
 

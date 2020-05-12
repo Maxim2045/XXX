@@ -8,6 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Controls;
 using System.Drawing;
+using WpfAppVedomost.Models;
 
 namespace WpfAppVedomost
 {
@@ -92,17 +93,21 @@ namespace WpfAppVedomost
         private void SQL_Click(object sender, RoutedEventArgs e)
         {
 
-            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Dekanat;Integrated Security=True";
-            string sqlExpression = "INSERT INTO Semester (NumberSemester) VALUES (18)";
+            /* string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Dekanat;Integrated Security=True";
+             string sqlExpression = "INSERT INTO Semester (NumberSemester) VALUES (18)";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(sqlExpression, connection);
-                int number = command.ExecuteNonQuery();
-                connection.Close();
-            }
-            
+             using (SqlConnection connection = new SqlConnection(connectionString))
+             {
+                 connection.Open();
+                 SqlCommand command = new SqlCommand(sqlExpression, connection);
+                 int number = command.ExecuteNonQuery();
+                 connection.Close();
+             }
+            CreateDB dB = new CreateDB();
+            dB.Create();*/
+            WindowDB windowDB = new WindowDB();
+            windowDB.Show();
+           
         }
 
         private void Print_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
