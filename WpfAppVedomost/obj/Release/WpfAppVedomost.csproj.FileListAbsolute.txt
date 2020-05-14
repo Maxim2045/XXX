@@ -29,3 +29,12 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\MaterialDesignThemes.Wpf.pdb
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\MaterialDesignThemes.Wpf.xml
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\App.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\System.Data.SQLite.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\System.Data.SQLite.EF6.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\System.Data.SQLite.Linq.dll
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\System.Data.SQLite.xml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Release\System.Data.SQLite.dll.config
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\StudentWindow.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\WindowDB.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\StudentWindow.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\WindowDB.g.cs

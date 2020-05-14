@@ -2,7 +2,7 @@
  
 namespace WpfAppVedomost.Models
 {
-    public class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext // Связывание с базой данных
     {
         public ApplicationContext():base("DefaultConnection")
         {

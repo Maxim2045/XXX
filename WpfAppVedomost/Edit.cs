@@ -12,7 +12,7 @@ namespace WpfAppVedomost
         public void EditClick(RichTextBox docBox)
         {
             docBox.Document.Blocks.Clear();
-            OpenFileDialog ofd = new OpenFileDialog
+            OpenFileDialog ofd = new OpenFileDialog //Выбор файла для редактирования
             {
                 Filter = "Word files (*.docx)|*.docx|All files (*.*)|*.*",
                 InitialDirectory = Path.Combine(
@@ -20,19 +20,20 @@ namespace WpfAppVedomost
             };
             if (ofd.ShowDialog() == true)
             {
-                Microsoft.Office.Interop.Word.Application wordObject = new Microsoft.Office.Interop.Word.Application();
+            Microsoft.Office.Interop.Word.Application wordObject = new Microsoft.Office.Interop.Word.Application();
             object File = ofd.FileName;
             object nullobject = System.Reflection.Missing.Value;
             wordObject.DisplayAlerts = WdAlertLevel.wdAlertsNone;
-            _Document docs = wordObject.Documents.Open(ref File, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject);
+            _Document docs = wordObject.Documents.Open(ref File, ref nullobject, ref nullobject, ref nullobject, ref nullobject, 
+                                                       ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject,
+                                                       ref nullobject, ref nullobject, ref nullobject, ref nullobject, ref nullobject);
             docs.ActiveWindow.Selection.WholeStory();
             docs.ActiveWindow.Selection.Copy();
             docBox.Paste();
             docs.Close(ref nullobject, ref nullobject, ref nullobject);
             wordObject.Quit();
             }
-            else MessageBox.Show("Отмена редактирования");
-           
+            else MessageBox.Show("Отмена редактирования");          
         }
     }
 }

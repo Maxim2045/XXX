@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Windows;
-using System.Diagnostics;
-using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Controls;
-using System.Drawing;
 using WpfAppVedomost.Models;
 
 namespace WpfAppVedomost
@@ -20,8 +17,8 @@ namespace WpfAppVedomost
         public MainWindow()
         {                  
            InitializeComponent();
-           cmbFontFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
-           cmbFontSize.ItemsSource = new List<double>() { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
+           cmbFontFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source); // Список шрифтов
+           cmbFontSize.ItemsSource = new List<double>() { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 }; // Размеры шрифтов
 
         }
         private void CmbFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -29,7 +26,7 @@ namespace WpfAppVedomost
             if (cmbFontFamily.SelectedItem != null)
                 docBox.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmbFontFamily.SelectedItem);
         }
-        private void CmbFontSize_TextChanged(object sender, TextChangedEventArgs e)
+        private void CmbFontSize_TextChanged(object sender, TextChangedEventArgs e) // Обработчик размера шрифта
         {
              try
             {
@@ -43,12 +40,12 @@ namespace WpfAppVedomost
                 }
                 catch(Exception)
                 {
-                    MessageBox.Show("Редактировование разных кеглей приложение не поддерживает, удалите строку и заново введите");
+                   // MessageBox.Show("Редактировование разных кеглей приложение не поддерживает, удалите строку и заново введите");
                 }
             }
             
         }
-        private void DocBox_SelectionChanged(object sender, RoutedEventArgs e)
+        private void DocBox_SelectionChanged(object sender, RoutedEventArgs e) // Обработчик изменения курсива, жирного, подчеркнутого шрифта
         {
             object temp = docBox.Selection.GetPropertyValue(Inline.FontWeightProperty);
             btnBold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
@@ -62,7 +59,7 @@ namespace WpfAppVedomost
             temp = docBox.Selection.GetPropertyValue(Inline.FontSizeProperty);
             cmbFontSize.Text = temp.ToString();
         }
-        public void CloseProcess(string Process_Name)
+      /*  public void CloseProcess(string Process_Name) // Киллер процессов для будущего программиста, кто не захочет разбираться с правильным закрытием процессов
         {
             Process[] processes = Process.GetProcessesByName(Process_Name); 
 
@@ -70,47 +67,36 @@ namespace WpfAppVedomost
             {
                 process.Kill();
             }
-        }
-        private void Save_Click(object sender, RoutedEventArgs e) //сохранение
+        }*/
+        private void Save_Click(object sender, RoutedEventArgs e) // Сохранение данных с RichTextBox
         {
             Save save = new Save();
             save.SaveClick(docBox);
-            CloseProcess("WINWORD");
         }
        
-        private void Load_Click(object sender, RoutedEventArgs e) //Загрузка документа(шаблона)
+        private void Load_Click(object sender, RoutedEventArgs e) 
         {
-
-            InputExcel Students = new InputExcel();
+            
+           
+            InputExcel Students = new InputExcel(); // Поучение данных из файла Excel
             _ = new List<string>();
-            List<string> Info = Students.Initialization();                
-            InputWord doc = new InputWord();           
-            doc.InsertTableInDoc(Info);                                                 
+            List<string> Info = Students.Initialization();  
+            if(Info != null)
+            {
+                InputWord doc = new InputWord();  // Внесение данных в Word файл     
+                doc.InsertTableInDoc(Info);
+            }
+            else 
+                MessageBox.Show("Отмена выбора файла");   
         }
-     
-    
-
+ 
+        
         private void SQL_Click(object sender, RoutedEventArgs e)
         {
-
-            /* string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Dekanat;Integrated Security=True";
-             string sqlExpression = "INSERT INTO Semester (NumberSemester) VALUES (18)";
-
-             using (SqlConnection connection = new SqlConnection(connectionString))
-             {
-                 connection.Open();
-                 SqlCommand command = new SqlCommand(sqlExpression, connection);
-                 int number = command.ExecuteNonQuery();
-                 connection.Close();
-             }
-            CreateDB dB = new CreateDB();
-            dB.Create();*/
             WindowDB windowDB = new WindowDB();
-            windowDB.Show();
-           
+            windowDB.ShowDialog();
         }
-
-        private void Print_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Print_Click(object sender, System.Windows.Input.MouseButtonEventArgs e) // Печать данных c RichTextBox
         {
             Print print = new Print();
             print.PrintClick(docBox);
@@ -120,8 +106,7 @@ namespace WpfAppVedomost
         {
             Edit edit = new Edit();
             edit.EditClick(docBox);
-            CloseProcess("WINWORD");
-            //docBox.ScrollToEnd();
+            //docBox.ScrollToEnd(); // Для перевода курсора в конец RichTextBox
         }
     }
 }

@@ -12,25 +12,23 @@ namespace WpfAppVedomost
     class InputWord
     {
         public TableCell Celled(string InputText)
-        {
-           
-            var tc = new TableCell();
+        {          
+            var tableCell = new TableCell();
             var paragraph = new Paragraph();
             var run = new Run();
             var text = new Text(InputText);
-
             
-            RunProperties runProperties1 = new RunProperties();
-            FontSize fontSize1 = new FontSize() { Val = "20" };
-            runProperties1.Append(fontSize1);
+            RunProperties runProperties = new RunProperties();
+            FontSize fontSize = new FontSize() { Val = "20" };
+            runProperties.Append(fontSize);
 
-            run.Append(runProperties1);
+            run.Append(runProperties);
             run.Append(text);
 
             paragraph.Append(run);
-            tc.Append(paragraph);
+            tableCell.Append(paragraph);
            
-            return tc;
+            return tableCell;
         }
         public  void InsertTableInDoc(List<string> Info)
         {
@@ -55,7 +53,7 @@ namespace WpfAppVedomost
                 
                 int k = 1;
                 for (int i = 0; i < Info.Count; i++)
-                   {
+                { 
                     TableRow tr = new TableRow();
                     for (int j=0;j<10;j++)
                     {
@@ -81,10 +79,8 @@ namespace WpfAppVedomost
                     }                   
                     table.Append(tr);                  
                     i++;
-                   }    
-            }
-            
-        }
-    
+                }    
+            }           
+        }    
     }
 }

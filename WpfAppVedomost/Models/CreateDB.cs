@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Data;
+﻿using System.Data;
 using System.Data.Common;
 using System.Data.SQLite;
 using System.Windows;
@@ -9,7 +7,7 @@ namespace WpfAppVedomost
 {
     class CreateDB
     {
-       public void Create()
+       public void Create() //Программное создание базы данных
         {
             string baseName = "Dekanat.db3";
 
@@ -20,19 +18,6 @@ namespace WpfAppVedomost
             {
                 connection.ConnectionString = "Data Source = " + baseName;
                 connection.Open();
-
-              /*  using (SQLiteCommand command = new SQLiteCommand(connection))
-                {
-                    command.CommandText = @"CREATE TABLE [workers] (
-                    [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    [name] char(100) NOT NULL,
-                    [family] char(100) NOT NULL,
-                    [age] int NOT NULL,
-                    [profession] char(100) NOT NULL
-                    );";
-                    command.CommandType = CommandType.Text;
-                    command.ExecuteNonQuery();
-                }*/
                 using (SQLiteCommand command = new SQLiteCommand(connection))
                 {
                     command.CommandText = @"CREATE TABLE [Squad] (
@@ -75,7 +60,6 @@ namespace WpfAppVedomost
                       command.ExecuteNonQuery();
                   }
                 MessageBox.Show("Success");
-
             }
         }
     }

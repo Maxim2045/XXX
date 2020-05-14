@@ -1,12 +1,10 @@
 ﻿using System;
-
 using System.IO;
 using Microsoft.Win32;
-using System.Windows;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Collections.Generic;
-using DocumentFormat.OpenXml.Drawing.Spreadsheet;
+
 
 namespace WpfAppVedomost
 {
@@ -15,36 +13,37 @@ namespace WpfAppVedomost
 
         public List<string> Initialization()
         {
-            List<string> Info = new List<string>();
-            FileDialog selectExcel = new OpenFileDialog
+            List<string> Info = new List<string>();//Лист для данных о студентах
+            FileDialog selectExcel = new OpenFileDialog //Выбор файла с данными о студентах
             {
                 Filter = "файл Excel (*.xlsx)|*.xlsx",
                 InitialDirectory = Path.Combine(
                 Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]))
             };
-            if (selectExcel.ShowDialog() == true)
+            try
             {
-                using (SpreadsheetDocument doc = SpreadsheetDocument.Open(selectExcel.FileName, false))
+                if (selectExcel.ShowDialog() == true)
                 {
-                    //Read the first Sheets 
-                    Sheet sheet = doc.WorkbookPart.Workbook.Sheets.GetFirstChild<Sheet>();
-                    Worksheet worksheet = (doc.WorkbookPart.GetPartById(sheet.Id.Value) as WorksheetPart).Worksheet;
-                    IEnumerable<Row> rows = worksheet.GetFirstChild<SheetData>().Descendants<Row>();
-                    int counter = 0;
-                    int counter2 = 0;
-                    foreach (Row row in rows)
+                    using (SpreadsheetDocument doc = SpreadsheetDocument.Open(selectExcel.FileName, false))
                     {
-                        counter2 = 0;
-                        counter ++;
-                        //Read the first row as header
-                        switch (counter)
+                        Sheet sheet = doc.WorkbookPart.Workbook.Sheets.GetFirstChild<Sheet>();
+                        Worksheet worksheet = (doc.WorkbookPart.GetPartById(sheet.Id.Value) as WorksheetPart).Worksheet;
+                        IEnumerable<Row> rows = worksheet.GetFirstChild<SheetData>().Descendants<Row>();
+                        int counter = 0;
+                        int counter2 = 0;
+                        foreach (Row row in rows)
                         {
-                            case 1:
-                                break;
-                            case 2:
-                                break;
-                            default:
-                                
+                            counter2 = 0;//Счетчик для разделения данных, так как в одном и том же листе хранятся все данные о студентах
+                            counter++;//Счетчик для пропуска первых двух строк в файле с данными, так как они содержат названия полей
+
+                            switch (counter)
+                            {
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                                default:
+
                                     foreach (Cell cell in row.Descendants<Cell>())
                                     {
                                         counter2++;
@@ -60,19 +59,23 @@ namespace WpfAppVedomost
                                                 break;
                                         }
                                     }
-                                break;
+                                    break;
+                            }
                         }
                     }
-                }
+                    return Info;
+                }             
+                else
+                    return null;
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Отмена редактирования");               
+                return null;                   //MessageBox.Show("Отмена выбора файла");               
             }
-            return Info;
+            
         } 
      
-        private string GetCellValue(SpreadsheetDocument doc, Cell cell)
+        private string GetCellValue(SpreadsheetDocument doc, Cell cell) //Получение данных из ячейки
         {   if (cell.CellValue == null)
             {
                 return  " ";

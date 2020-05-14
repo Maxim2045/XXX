@@ -51,7 +51,7 @@ namespace WpfAppVedomost.Models
 
             if (studentWindow.ShowDialog() == true)
             {
-                // получаем измененный объект
+                // Получение измененного объекта
                 student = db.Students.Find(studentWindow.Student.IdStudent);
                 if (student != null)
                 {
@@ -65,12 +65,12 @@ namespace WpfAppVedomost.Models
                 }
             }
         }
-        // удаление
+        
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            // если ни одного объекта не выделено, выходим
+            // Если ни одного объекта не выделено, выход
             if (studentsList.SelectedItem == null) return;
-            // получаем выделенный объект
+            // Получение выделенного объекта
             Student student = studentsList.SelectedItem as Student;
             db.Students.Remove(student);
             db.SaveChanges();

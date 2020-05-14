@@ -4,18 +4,15 @@ using System.Runtime.CompilerServices;
 
 namespace WpfAppVedomost.Models
 {
-    public class Student : INotifyPropertyChanged
-    {
-      
+    public class Student : INotifyPropertyChanged //Класс для объектов базы данных
+    {    
         private string firstName;
         private string lastName;
         private string patronimic;
         private int recordNumber;
         private int idGroup;
-
-        
+       
        [Key]  public int IdStudent { get; set; }
-
         public string FirstName
         {
             get { return firstName; }
@@ -63,10 +60,9 @@ namespace WpfAppVedomost.Models
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        public void OnPropertyChanged([CallerMemberName]string prop = "") // Связывание внесения данных в окне с классом объектов БД
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
     }
 }

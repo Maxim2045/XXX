@@ -15,7 +15,7 @@ namespace WpfAppVedomost
             {
                 Filter = "Text Files (*.txt)|*.txt|RichText Files (*.rtf)|*.rtf|XAML Files (*.xaml)|*.xaml|All files (*.*)|*.*",
                 InitialDirectory = Path.Combine(
-                 Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]))  //По их выбору поменяю папку дефолтную
+                Path.GetDirectoryName(Environment.GetCommandLineArgs()[0])) 
             };
             if (sfd.ShowDialog() == true)
             {
@@ -35,7 +35,7 @@ namespace WpfAppVedomost
                 MessageBox.Show("Файл не сохранен"); 
             }
             File.Delete(Path.Combine(
-           Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.rtf"));
+            Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.rtf"));
         }
     }
 }

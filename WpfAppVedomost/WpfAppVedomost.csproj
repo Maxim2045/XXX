@@ -114,7 +114,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\AddInfoToBDcs.cs" />
     <Compile Include="Models\CreateDB.cs" />
     <Compile Include="Edit.cs" />
     <Compile Include="Models\ApplicationContext.cs" />
