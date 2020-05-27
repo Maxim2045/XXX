@@ -64,15 +64,14 @@ namespace WpfAppVedomost
                         }
                     }
                     return Info;
-                }             
+                }
                 else
                     return null;
             }
             catch (Exception)
             {
-                return null;                   //MessageBox.Show("Отмена выбора файла");               
+                return null;
             }
-            
         } 
      
         private string GetCellValue(SpreadsheetDocument doc, Cell cell) //Получение данных из ячейки

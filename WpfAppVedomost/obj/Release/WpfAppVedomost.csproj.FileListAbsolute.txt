@@ -38,3 +38,11 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\WindowDB.baml
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\StudentWindow.g.cs
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\WindowDB.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\MenuWindow.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\MenuWindow.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\ReferenceWindow.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\ReferenceWindow.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\SpecialityWindow.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\SpecialityDB.g.cs
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\SpecialityWindow.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Release\Models\SpecialityDB.baml

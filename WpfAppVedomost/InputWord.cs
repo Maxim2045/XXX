@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -11,14 +10,14 @@ namespace WpfAppVedomost
 {
     class InputWord
     {
-        public TableCell Celled(string InputText)
+        public TableCell Celled(string InputText) //Обработка ячейки
         {          
-            var tableCell = new TableCell();
-            var paragraph = new Paragraph();
+            var tableCell = new TableCell(); // Ячейка
+            var paragraph = new Paragraph(); // Параграф
             var run = new Run();
-            var text = new Text(InputText);
+            var text = new Text(InputText); // Вводимый текст
             
-            RunProperties runProperties = new RunProperties();
+            RunProperties runProperties = new RunProperties();//Форматирование текста
             FontSize fontSize = new FontSize() { Val = "20" };
             runProperties.Append(fontSize);
 
@@ -61,16 +60,14 @@ namespace WpfAppVedomost
                         switch (j)
                         {
                             case 0:
-
-                                tr.Append(Celled(k.ToString()));
+                                tr.Append(Celled(k.ToString())); // Номер строки
                                 k++;
                                 break;
                             case 1:
-                                tr.Append(Celled(Info[i].ToString()));
-                                
+                                tr.Append(Celled(Info[i].ToString())); // ФИО                                
                                 break;
                             case 2:
-                                tr.Append(Celled(Info[i+1].ToString()));
+                                tr.Append(Celled(Info[i+1].ToString())); // Номер зачетки
                                 break;
                             default:
                                 tr.Append(Celled(""));                              

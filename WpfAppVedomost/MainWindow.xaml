@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfAppVedomost.MainWindow"
+﻿<Window x:Name="Vedomost" x:Class="WpfAppVedomost.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -56,40 +56,39 @@
         </StackPanel>-->
 
         <StackPanel Margin="904.4,10,21.8,0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" MouseDown="Menu_Click" Cursor="Hand">
+                <Button Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Menu_Click">
+                    <materialDesign:PackIcon Kind="ArrowLeft"/>
+                </Button>
+                <TextBlock Text="Меню" FontSize="16" Margin="10" VerticalAlignment="Center" Width="90"/>
+            </StackPanel>
             <TextBlock Text="Действия" Margin="15" FontWeight="DemiBold"/>
             <ListView FontSize="15"  >
                 <ListViewItem Padding="1">
-                    <StackPanel Orientation="Horizontal"  MouseDown="Load_Click"  >
+                    <StackPanel Orientation="Horizontal"  MouseDown="Load_Click" Cursor="Hand" >
                         <materialDesign:PackIcon Kind="FileUpload" Margin="15"/>
-                        <TextBlock Text="Загрузить" VerticalAlignment="Center"  />
+                        <TextBlock Text="Сформировать" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Padding="1" >
-                    <StackPanel Orientation="Horizontal" MouseDown="Edit_Click" >
+                    <StackPanel Orientation="Horizontal" MouseDown="Edit_Click" Cursor="Hand" >
                         <materialDesign:PackIcon Kind="Edit" Margin="15"/>
                         <TextBlock Text="Редактировать" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Padding="1">
-                    <StackPanel Orientation="Horizontal" MouseDown="Save_Click">
+                    <StackPanel Orientation="Horizontal" MouseDown="Save_Click" Cursor="Hand" >
                         <materialDesign:PackIcon Kind="ContentSave" Margin="15"/>
                         <TextBlock Text="Сохранить" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Padding="1">
-                    <StackPanel Orientation="Horizontal" MouseDown="Print_Click" >
+                    <StackPanel Orientation="Horizontal" MouseDown="Print_Click" Cursor="Hand" >
                         <materialDesign:PackIcon Kind="Printer" Margin="15"/>
                         <TextBlock Text="Печать" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Padding="1">
-                    <StackPanel Orientation="Horizontal" MouseDown="SQL_Click" >
-                        <materialDesign:PackIcon Kind="Database" Margin="15"/>
-                        <TextBlock Text="SQL" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </ListViewItem>
             </ListView>
         </StackPanel>
-
     </Grid>
 </Window>

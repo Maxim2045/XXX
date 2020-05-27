@@ -4,34 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Данные о студентах" Height="300" Width="600">
+        Title="Данные о студентах" Height="Auto" Width="650">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="Фамилия" FontSize="13" Margin="10"/>
-            <TextBlock Text="Имя" FontSize="13" Margin="10"/>
-            <TextBlock Text="Отчество" FontSize="13" Margin="10" />
-            <TextBlock Text="Номер билета" FontSize="13" Margin="10" />
-            <TextBlock Text="Группа" FontSize="13" Margin="10" />
-        </StackPanel>
-        <ListBox Grid.Row="1" HorizontalAlignment="Center" x:Name="studentsList" ItemsSource="{Binding}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel  Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+              
+        <DataGrid AutoGenerateColumns="False" x:Name="studentsList"  ItemsSource="{Binding}">
+                        <!--AutoGenerateColumns="False" x:Name="studentList" ItemsSource="{Binding}"-->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding FirstName}" Header="Фамилия" Width="120"  />
+                            <DataGridTextColumn Binding="{Binding LastName}" Header="Имя" Width="120"/>
+                            <DataGridTextColumn Binding="{Binding Patronimic}" Header="Отчество" Width="120"/>
+                            <DataGridTextColumn Binding="{Binding RecordNumber}" Header="Номер билета" Width="120"/>
+                            <DataGridTextColumn Binding="{Binding IdGroup}" Header="Группа" Width="120"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <!--<StackPanel  Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="{Binding FirstName}" FontSize="13" Margin="10"/>
                         <TextBlock Text="{Binding LastName}" FontSize="13" Margin="10"/>
                         <TextBlock Text="{Binding Patronimic}" FontSize="13" Margin="10"/>
                         <TextBlock Text="{Binding RecordNumber}" FontSize="13" Margin="10"/>
                         <TextBlock Text="{Binding IdGroup}" FontSize="13" Margin="10"/>
-                    </StackPanel>
-                </DataTemplate>
+                    </StackPanel>-->
+                <!--</DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>
+        </ListBox>-->
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Добавить" Margin="10" Click="Add_Click" />
             <Button Content="Изменить" Margin="10" Click="Edit_Click"  />

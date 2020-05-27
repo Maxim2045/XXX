@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Data.Entity;
 using System.Windows;
-using System.Windows.Forms;
+
 
 namespace WpfAppVedomost.Models
 {
@@ -11,12 +9,12 @@ namespace WpfAppVedomost.Models
     /// </summary>
     public partial class WindowDB : Window
     {
-        readonly ApplicationContext db;
+        readonly StudentContext db;
         public WindowDB()
         {     
             InitializeComponent();
 
-            db = new ApplicationContext();
+            db = new StudentContext();
             db.Students.Load();
             this.DataContext = db.Students.Local.ToBindingList();
         }

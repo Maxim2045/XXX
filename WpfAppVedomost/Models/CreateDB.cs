@@ -20,9 +20,10 @@ namespace WpfAppVedomost
                 connection.Open();
                 using (SQLiteCommand command = new SQLiteCommand(connection))
                 {
-                    command.CommandText = @"CREATE TABLE [Squad] (
-                    [IdGroup] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    [NumberGroup] int NOT NULL                
+                    command.CommandText = @"CREATE TABLE [Specialities] (
+                    [IdSpeciality] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    [Code] char(20) NOT NULL,
+                    [NameSpeciality] char(100) NOT NULL
                     );";
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
@@ -31,12 +32,25 @@ namespace WpfAppVedomost
                 {
                     command.CommandText = @"CREATE TABLE [Discipline] (
                     [IdDiscipline] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    [Discipline] char(100)                 
+                    [Discipline] char(100),
+                    [Hourss] int,
+                    [Lectures] int,
+                    [Practicies] int
                     );";
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                 }
-                  using (SQLiteCommand command = new SQLiteCommand(connection))
+                using (SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    command.CommandText = @"CREATE TABLE [Squad] (
+                    [IdGroup] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    [NumberGroup] int NOT NULL,
+                    [IdSpeciality] INT FOREIGNKEY REFERENCES Speciality(IdSpeciality)
+                    );";
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                }
+                using (SQLiteCommand command = new SQLiteCommand(connection))
                   {
                       command.CommandText = @"CREATE TABLE [Sheet] (
                       [IdSheet] integer PRIMARY KEY AUTOINCREMENT NOT NULL,

@@ -18,7 +18,7 @@ namespace WpfAppVedomost
             
                 if (passwordBox.Password == "1")
                 {                   
-                    MainWindow window = new MainWindow();
+                    MenuWindow window = new MenuWindow();
                     window.Show();
                     AutorizationWindow.Close();
                 }
@@ -26,8 +26,10 @@ namespace WpfAppVedomost
                     MessageBox.Show("Неверный пароль");                     
         }
         private void Deny_Click(object sender, RoutedEventArgs e)
-        {          
-            AutorizationWindow.Close();
+        {
+         // CreateDB db = new CreateDB();
+         // db.Create();
+          AutorizationWindow.Close();
         }
     }
 }

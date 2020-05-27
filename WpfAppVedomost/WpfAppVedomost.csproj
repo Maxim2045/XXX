@@ -114,17 +114,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\CreateDB.cs" />
     <Compile Include="Edit.cs" />
-    <Compile Include="Models\ApplicationContext.cs" />
+    <Compile Include="Models\SpecialityContext.cs" />
+    <Compile Include="Models\SpecialityWindow.xaml.cs">
+      <DependentUpon>SpecialityWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentContext.cs" />
+    <Compile Include="Models\Speciality.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Print.cs" />
+    <Compile Include="ReferenceWindow.xaml.cs">
+      <DependentUpon>ReferenceWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Save.cs" />
     <Compile Include="Models\WindowDB.xaml.cs">
       <DependentUpon>WindowDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpecialityDB.xaml.cs">
+      <DependentUpon>SpecialityDB.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +154,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Models\SpecialityWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Models\StudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +171,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Models\WindowDB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReferenceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Models\SpecialityDB.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,6 +17,7 @@ namespace WpfAppVedomost
                 pd.PrintDocument((((IDocumentPaginatorSource)docBox.Document).DocumentPaginator), "Печать документа");
             }
             else MessageBox.Show("Печать отменена");
+
         }
     }
 }

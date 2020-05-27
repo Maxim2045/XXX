@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Controls;
-using WpfAppVedomost.Models;
 
 namespace WpfAppVedomost
 {
@@ -80,28 +79,36 @@ namespace WpfAppVedomost
            
             InputExcel Students = new InputExcel(); // Поучение данных из файла Excel
             _ = new List<string>();
-            List<string> Info = Students.Initialization();  
-            if(Info != null)
+            List<string> Info = Students.Initialization();
+            if (Info != null)
             {
                 InputWord doc = new InputWord();  // Внесение данных в Word файл     
                 doc.InsertTableInDoc(Info);
             }
-            else 
-                MessageBox.Show("Отмена выбора файла");   
+            else
+            {
+                MessageBox.Show("Отмена выбора файла");
+            }
+            MessageBox.Show("Ведомость успешно создана!");
         }
  
-        
-        private void SQL_Click(object sender, RoutedEventArgs e)
-        {
-            WindowDB windowDB = new WindowDB();
-            windowDB.ShowDialog();
-        }
         private void Print_Click(object sender, System.Windows.Input.MouseButtonEventArgs e) // Печать данных c RichTextBox
         {
             Print print = new Print();
             print.PrintClick(docBox);
         }
-
+        private void Menu_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MenuWindow window = new MenuWindow();
+            window.Show();
+            Vedomost.Close();
+        }
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow window = new MenuWindow();
+            window.Show();
+            Vedomost.Close();
+        }
         private void Edit_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Edit edit = new Edit();

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\App.xaml
-41405395854
+8698640652
 
-17-1182705742
+23-1570249363
 29-1919133391
-MainWindow.xaml;Models\StudentWindow.xaml;PasswordWindow.xaml;Models\WindowDB.xaml;
+MainWindow.xaml;MenuWindow.xaml;Models\SpecialityWindow.xaml;Models\StudentWindow.xaml;PasswordWindow.xaml;Models\WindowDB.xaml;ReferenceWindow.xaml;Models\SpecialityDB.xaml;
 
 True
 

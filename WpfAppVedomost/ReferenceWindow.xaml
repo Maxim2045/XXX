@@ -1,0 +1,68 @@
+﻿<Window x:Class="WpfAppVedomost.ReferenceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppVedomost"
+        mc:Ignorable="d"
+        Title="Справка" Height="600" Width="1000">
+    <Grid>
+        <RichTextBox x:Name="referenceBox" Margin="20,5.2,94.4,41" Width="850" Background="White" CaretBrush="#FF251313" BorderBrush="#892214F0" BorderThickness="1" FontFamily="Segoi UI" FontSize="14">
+            <FlowDocument >
+                <Paragraph>
+                       Это выпускная квалификационная работа студента 4-го курса.
+                    Проект выполнен в среде разработки WPF .NET Framework на языке программирования C#.
+                </Paragraph>
+                
+                <Paragraph>
+                       Данные о студентах храняться в Excel таблицах, необходимо перенести в Word шаблон.
+                </Paragraph>
+                
+                <Paragraph>
+                    Что есть в проекте:
+                </Paragraph>
+                <List MarkerStyle="Decimal">
+                    <ListItem>
+                        <Paragraph>Для работы с Excel(копирование) и Word(внесение данных) была использована библиотека OpenXML.
+                                   На этом версия для деканата кончается))</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>Имеется реализация окна редактирования Word файлов с помощью контрола RichTextBox. Для переноса информации
+                                   из документа на контрол использована библиотека Microsoft.Office.Interop.Word(реализовано в виде copy-paste).</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>Реализованы функции сохранения(FileSteam) и печати(System.Printing) текста с RichTextBox.</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>Выбор шрифта и его размера; подчеркивание, курсив и жирный шрифт.</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>Имеется БД для хранения данных о студентах. Написана в среде SQLite. Создавалась прогрммано с помощью библиотеки 
+                                   System.Data.SQLite. Взаимодействие с посредством EntityFramework. Данные о студнтах вносятся в ручную, можно использовать в
+                                   качестве списка злостных должников</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>Для шика и лоска(пародирование Win10) были использованы GUI библиотеки FluentWPF и MaterialDesign.</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>Код прокомментирован, исключения обработаны</Paragraph>
+                    </ListItem>
+                </List>
+
+                <Paragraph>
+                   Чтобы сформировать ведомость небходимо нажать на кнопку сформировать, выбрать файл с данными, нажать ОК.
+                </Paragraph>
+                <Paragraph>
+                </Paragraph>
+                <Paragraph>
+                </Paragraph>
+                <Paragraph>
+                </Paragraph>
+                <Paragraph>
+                </Paragraph>
+                <Paragraph>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Window>
