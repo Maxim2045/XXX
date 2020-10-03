@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace WpfAppVedomost
 {
-    class Print
+    class Print //Печать файла с ричтекстбокса
     {
         public void PrintClick(RichTextBox docBox)
         {
@@ -17,7 +17,6 @@ namespace WpfAppVedomost
                 pd.PrintDocument((((IDocumentPaginatorSource)docBox.Document).DocumentPaginator), "Печать документа");
             }
             else MessageBox.Show("Печать отменена");
-
         }
     }
 }

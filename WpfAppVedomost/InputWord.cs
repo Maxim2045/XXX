@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Windows;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace WpfAppVedomost
 {
-    class InputWord
+    class InputWord //Вставка данных в новую ведомость
     {
         public TableCell Celled(string InputText) //Обработка ячейки
         {          
@@ -29,7 +28,7 @@ namespace WpfAppVedomost
            
             return tableCell;
         }
-        public  void InsertTableInDoc(List<string> Info)
+        public void InsertTableInDoc(List<string> Info)
         {
             string filepath = Path.Combine(
                             Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost.docx"
@@ -37,26 +36,19 @@ namespace WpfAppVedomost
             string filepath2 = Path.Combine(
                             Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\NewVedomost.docx"
                                          );
-            try
-            {
-                File.Copy(filepath, filepath2);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Удалите или перемеименуйте ранее созданную ведомость");
-            }
+         
+                File.Copy(filepath, filepath2); //Создание нового файла ведомости
+           
             using (WordprocessingDocument wordDoc2 = WordprocessingDocument.Open(filepath2, true))
             {
                 var doc = wordDoc2.MainDocumentPart.Document;
                 Table table = doc.MainDocumentPart.Document.Body.Elements<Table>().FirstOrDefault();
-                
                 int k = 1;
                 for (int i = 0; i < Info.Count; i++)
-                { 
+                {
                     TableRow tr = new TableRow();
-                    for (int j=0;j<10;j++)
+                    for (int j = 0; j < 10; j++)
                     {
-                        
                         switch (j)
                         {
                             case 0:
@@ -64,19 +56,19 @@ namespace WpfAppVedomost
                                 k++;
                                 break;
                             case 1:
-                                tr.Append(Celled(Info[i].ToString())); // ФИО                                
+                                tr.Append(Celled(Info[i].ToString())); // ФИО                              
                                 break;
                             case 2:
-                                tr.Append(Celled(Info[i+1].ToString())); // Номер зачетки
+                                tr.Append(Celled(Info[i + 1].ToString())); // Номер зачетки
                                 break;
                             default:
-                                tr.Append(Celled(""));                              
+                                tr.Append(Celled("")); // Пустые значения для незаполняемых ячеек
                                 break;
-                        }                                               
-                    }                   
-                    table.Append(tr);                  
+                        }
+                    }
+                    table.Append(tr);
                     i++;
-                }    
+                }
             }           
         }    
     }

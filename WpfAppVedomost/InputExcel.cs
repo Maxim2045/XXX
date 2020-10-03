@@ -8,9 +8,8 @@ using System.Collections.Generic;
 
 namespace WpfAppVedomost
 {
-    class InputExcel
+    class InputExcel //Для копирования данных из Excel файла
     {
-
         public List<string> Initialization()
         {
             List<string> Info = new List<string>();//Лист для данных о студентах
@@ -33,7 +32,7 @@ namespace WpfAppVedomost
                         int counter2 = 0;
                         foreach (Row row in rows)
                         {
-                            counter2 = 0;//Счетчик для разделения данных, так как в одном и том же листе хранятся все данные о студентах
+                            counter2 = 0;//Счетчик для разделения данных по столбцам, так как в одном и том же листе хранятся все данные о студентах
                             counter++;//Счетчик для пропуска первых двух строк в файле с данными, так как они содержат названия полей
 
                             switch (counter)

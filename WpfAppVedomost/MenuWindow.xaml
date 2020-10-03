@@ -11,7 +11,7 @@
         Title="Главное меню" Height="500" Width="900"  WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="D:\Загрузки\2.gif"></ImageBrush>
+            <ImageBrush ImageSource="Images/2.gif"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -19,7 +19,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Source="D:\Загрузки\3.jpg" Height="92" Margin="764,0,29.6,10" VerticalAlignment="Bottom"/>
+        <Image Grid.Row="0" Source="Images/3.jpg" Height="92" Margin="764,0,29.6,10" VerticalAlignment="Bottom"/>
 
         <TextBlock Grid.Row="0" Text="Выберите действие:" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="272,0,401.6,10"/>
         <Button Content="Работа с ведомостями" Click="Vedomost_Click" Width="350" Height="50" Grid.Row="1"  FontSize="22" Background="GhostWhite" />

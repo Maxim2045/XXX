@@ -4,10 +4,9 @@ using System.Windows;
 using System.Windows.Documents;
 using System.IO;
 using System.Windows.Controls;
-
 namespace WpfAppVedomost
 {
-    class Save
+    class Save //Сохранение данных с ричтекстбокса
     {
         public void SaveClick(RichTextBox docBox)
         {
@@ -33,9 +32,7 @@ namespace WpfAppVedomost
             else
             {
                 MessageBox.Show("Файл не сохранен"); 
-            }
-            File.Delete(Path.Combine(
-            Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]) + "\\Vedomost2.rtf"));
+            }          
         }
     }
 }

@@ -9,23 +9,12 @@
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF" 
         fw:AcrylicWindow.Enabled="True"
         Title="Ведомайзер" Height="1250" Width="1200"   Margin="0,0,50,0" FontSize="14">
-    <!--<Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="25" />
-            <Setter Property="Width" Value="80" />
-            <Setter Property="Margin" Value="5 6 5 6" />
-        </Style>
-    </Window.Resources>-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="56.8"/>
             <ColumnDefinition Width="1094.4"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition Height="900" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>-->
         <DockPanel Margin="0,0,26.2,0" Grid.ColumnSpan="2">
             <ToolBar DockPanel.Dock="Top" Margin="0,0,174.2,0" HorizontalAlignment="Right" Width="850" Background="White">
                 <Separator />
@@ -44,17 +33,6 @@
             </ToolBar>
             <RichTextBox x:Name="docBox" Margin="20,5.2,94.4,41"  SelectionChanged="DocBox_SelectionChanged" Width="850" Background="White" CaretBrush="#FF251313" BorderBrush="#892214F0" BorderThickness="1" FontFamily="Times New Roman" FontSize="12"/>
         </DockPanel>
-        
-
-        <!--<StackPanel Margin="0,0,-0.4,0.4" HorizontalAlignment="Right" Grid.ColumnSpan="3" Grid.Column="2" >
-            <Button Content="Сохранить" Click="Save_Click" Width="88" />
-            <Button Content="Загрузить"  Click="Load_Click"  Width="88" />
-            <Button Content="Редактировать"  Click="Edit_Click" Width="88"/>
-            <Button Content="Печать"   Width="88" />
-
-            <Button Content="SQL" Click="SQL_Click" />
-        </StackPanel>-->
-
         <StackPanel Margin="904.4,10,21.8,0" Grid.Column="1">
             <StackPanel Orientation="Horizontal" MouseDown="Menu_Click" Cursor="Hand">
                 <Button Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Menu_Click">

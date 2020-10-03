@@ -27,7 +27,6 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Wp
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\WpfAppVedomost.csproj.CoreCompileInputs.cache
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\WpfAppVedomost.exe
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\WpfAppVedomost.pdb
-D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\WpfAppVedomost.csprojAssemblyReference.cache
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\PasswordWindow.g.cs
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\PasswordWindow.baml
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\bin\Debug\DocumentFormat.OpenXml.dll
@@ -61,3 +60,4 @@ D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Mo
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Models\SpecialityDB.g.cs
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Models\SpecialityWindow.baml
 D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\Models\SpecialityDB.baml
+D:\Загрузки\MyApps\Диплом2019-2020\XXX\WpfAppVedomost\obj\Debug\WpfAppVedomost.csprojAssemblyReference.cache

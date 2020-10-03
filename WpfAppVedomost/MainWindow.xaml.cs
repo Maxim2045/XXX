@@ -80,16 +80,27 @@ namespace WpfAppVedomost
             InputExcel Students = new InputExcel(); // Поучение данных из файла Excel
             _ = new List<string>();
             List<string> Info = Students.Initialization();
-            if (Info != null)
-            {
-                InputWord doc = new InputWord();  // Внесение данных в Word файл     
-                doc.InsertTableInDoc(Info);
-            }
-            else
-            {
-                MessageBox.Show("Отмена выбора файла");
-            }
-            MessageBox.Show("Ведомость успешно создана!");
+          
+                if (Info != null)
+                {
+                    InputWord doc = new InputWord();
+              
+                // Внесение данных в Word файл 
+                     try
+                     {
+                          doc.InsertTableInDoc(Info);
+                          MessageBox.Show("Ведомость успешно создана!");
+                     }
+                     catch(Exception)
+                     {
+                    MessageBox.Show("Удалите или переименуйте ранее созданную ведомосость");
+                     }
+                  
+                }
+                else
+                {
+                    MessageBox.Show("Отмена формирования");
+                }          
         }
  
         private void Print_Click(object sender, System.Windows.Input.MouseButtonEventArgs e) // Печать данных c RichTextBox

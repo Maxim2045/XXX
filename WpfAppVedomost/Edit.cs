@@ -7,7 +7,7 @@ using Microsoft.Office.Interop.Word;
 
 namespace WpfAppVedomost
 {
-    class Edit
+    class Edit //Для редактирования документа
     {
         public void EditClick(RichTextBox docBox)
         {
